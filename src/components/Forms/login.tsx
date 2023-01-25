@@ -1,30 +1,30 @@
-import * as React from "react";
+import React from "react";
+import { navigate } from "gatsby";
 import Button from "../Button";
 import Input from "../Input";
 import { indexStyles } from "./styles";
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-
 const Login = ({onBack}) => {
   const styles = indexStyles();
+
+  const onSubmit = () => {
+    navigate('/home')
+  }
+  
   return (
-    <main style={pageStyles}>
       <div css={styles.formWrapper}>
         <div css={styles.loginForm}>
           <Input label={"Usuario"} />
           <Input label={"Contraseña"} />
-          <Button text={"Ingresar"}></Button>
+          <Button 
+            onClick={() => onSubmit()}
+            text={"Ingresar"}></Button>
           <Button
             color={'#673299'}
             onClick={onBack} 
             text={"Registrarse"}></Button>
         </div>
       </div>
-    </main>
   );
 };
 
