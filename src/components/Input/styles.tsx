@@ -31,7 +31,7 @@ export const inputStyles = () => {
       left: 0;
       z-index: 1;
       resize: none;
-      width: 100%;
+      width: 90%;
       height: auto;
       padding: 0.75rem 1.25rem;
       border-radius: 0.25rem;

@@ -1,10 +1,10 @@
 import {css} from '@emotion/react'
 
-export const buttonStyles = () => {
+export const buttonStyles = (color) => {
   return {
     wrapper : css`
     width:100%;
-    background: #8c54ff;
+    background: ${color ?? '#8c54ff'};
     border: 0;
     border-radius: 5px;
     color: #fff;
@@ -13,9 +13,10 @@ export const buttonStyles = () => {
     font-weight: 600;
     padding: 10px 15px;
     text-align:center;
+    margin-bottom:1.5rem;
     transition: transform 100ms ease-out;
       &:hover {
-        background: #682ede;
+        background: ${color ?? '#8c54ff'};
         transform: scale(1.1);
       }
     `

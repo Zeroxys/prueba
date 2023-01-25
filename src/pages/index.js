@@ -1,6 +1,6 @@
-import * as React from "react";
-import Button from "../components/Button";
-import Input from "../components/Input";
+import React, { useState } from "react";
+import Login from "../components/Forms/login";
+import SignUp from "../components/Forms/signup";
 
 const pageStyles = {
   color: "#232129",
@@ -9,10 +9,17 @@ const pageStyles = {
 };
 
 const IndexPage = () => {
+  const [showSignUp, setShowSignUp] = useState(false);
+
+  const changeForms = () => setShowSignUp(!showSignUp);
+
   return (
     <main style={pageStyles}>
-      <Input />
-      <Button text={"Ingresar"}></Button>
+      {!showSignUp ? (
+        <Login onBack={changeForms} />
+      ) : (
+        <SignUp onBack={changeForms} />
+      )}
     </main>
   );
 };
