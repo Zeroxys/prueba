@@ -1,0 +1,11 @@
+-- Querie for all active users
+-- SELECT * FROM usuarios WHERE isActive = 1
+
+-- Query for get all liked users songs
+-- SELECT mm.name,mm.author, usu.usuario, per.genero
+--  FROM mimusica mm
+--  INNER JOIN personas per ON
+--  mm.persona_id = per.persona_id
+--  INNER JOIN usuarios usu ON
+--  usu.persona_id = per.persona_id
+--  WHERE usu.isActive = 1 
