@@ -68,6 +68,17 @@ export const navbarStyles = () => {
       @media screen and (max-width: 768px) {
         display: block;
       }
+    `,
+    profileImage : css`
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      position: absolute;
+      top: 50%;
+      right: 25px;
+      transform: translateY(-50%);
+      @media screen and (max-width: 768px) {
+        display: block;
+      }
     `
   }
 }

@@ -5,6 +5,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Table from "../Table";
 import { profileStyles } from "./styles";
+import Button from "../Button";
 
 const ProfileComponent = () => {
   const styles = profileStyles()
@@ -13,8 +14,16 @@ const ProfileComponent = () => {
         border={false} 
         tableWidth={60}>
         <div css={styles.profileHeader}>
-          <FontAwesomeIcon icon={faUser} size="2x"/>
-          <h3>user name</h3>
+          <div css={styles.profileNameContainer}>
+            <FontAwesomeIcon icon={faUser} size="2x"/>
+            <h3>user name</h3>
+          </div>
+          <div css={styles.buttonContainer}>
+            <Button
+              marginBottom={'0'}
+              color='red' 
+              text='Eliminar usuario'/>
+          </div>
         </div>
         <Table 
           border 

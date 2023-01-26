@@ -1,6 +1,12 @@
 import {css} from '@emotion/react'
+import { faL } from '@fortawesome/free-solid-svg-icons'
 
-export const buttonStyles = (color) => {
+export const buttonStyles = (
+  color, 
+  height = false, 
+  marginBottom = false, 
+  padding = false
+  ) => {
   return {
     wrapper : css`
     width:100%;
@@ -11,9 +17,8 @@ export const buttonStyles = (color) => {
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
-    padding: 10px 15px;
+    margin-bottom: ${marginBottom ? marginBottom : 1.5}rem;
     text-align:center;
-    margin-bottom:1.5rem;
     transition: transform 100ms ease-out;
       &:hover {
         background: ${color ?? '#8c54ff'};

@@ -1,12 +1,12 @@
 import {css} from '@emotion/react'
 
-export const profileStyles = (formWrapperSize, border) => {
+export const profileStyles = () => {
   return {
     profileHeader : css`
       max-width: 50rem;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: space-between;
       width: 100%;
       height: auto;
       margin: 0 auto;
@@ -23,5 +23,13 @@ export const profileStyles = (formWrapperSize, border) => {
       }
 
     `,
+    profileNameContainer : css`
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `,
+    buttonContainer : css`
+      margin-right: 1.5rem;
+    `
   }
 }
