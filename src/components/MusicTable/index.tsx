@@ -27,12 +27,13 @@ const ModalInlineStyles = {
   },
 };
 
-const MusicInfo = ({id, name, author, onDelete}) => {
+const MusicInfo = ({id, authorName, songName, onDelete}) => {
+  const styles = musicTableStyles()
   return (
-    <div key={id}>
+    <div css={styles.songContainer} key={id}>
       <div>
-        <p>{name}</p>
-        <p>{author}</p>
+        <p>Song : {songName}</p>
+        <p>Autor : {authorName}</p>
       </div>
       <FontAwesomeIcon 
         onClick={() => onDelete(id)} 
@@ -44,15 +45,23 @@ const MusicInfo = ({id, name, author, onDelete}) => {
 
 const MusicComponent = () => {
   const styles = musicTableStyles()
+  const [musicData, setMusicData] = useState({})
   const [musicList, setMusicList] = useState([])
   const [modalOpen, isModalOpen] = useState(false)
-  
-  const addMusic = () => {
+
+  const onChange = (e) => {
+    setMusicData({
+      ...musicData,
+      [e.target.name] : e.target.value
+    })
+  }
+
+  const addMusic = (e) => {
+    const musicName = e.target.value
     const musics = [...musicList]
     musics.push({
-      id : Date.now(),
-      name : 'todo se transforma',
-      author : 'jorge drexler'
+      ...musicData,
+      id : Date.now()
     })
     setMusicList(musics)
     isModalOpen(false)
@@ -77,16 +86,16 @@ const MusicComponent = () => {
           icon={faClose} size="2x"/>
         
         <div 
-          style={
-            {
-              height:200, 
-              display:'flex',
-              flexDirection: 'column',
-              alignItems:'center',
-              justifyContent: 'center'
-            }
-            }>
-          <Input label='Nombre de la cancion'/>
+          css={styles.modalContent}>
+          <Input
+            onChange={onChange}
+            name={'songName'}
+            label='Nombre de la cancion'/>
+
+          <Input
+            onChange={onChange}
+            name={'authorName'}
+            label='Autor'/>
           <div style={{width:'80%'}}>
             <Button
               height={45} 

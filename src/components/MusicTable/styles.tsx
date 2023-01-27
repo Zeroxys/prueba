@@ -43,6 +43,22 @@ export const musicTableStyles = () => {
       right: 0;
       bottom: 0;
       background-color: rebeccapurple;
+    `,
+    modalContent : css`
+      height:200px;
+      display:flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content: center;
+      margin-top:1.5rem;
+    `,
+    songContainer : css`
+      display:flex;
+      justify-content:space-between;
+      padding:0 1.5rem;
+      align-items:center;
+      box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+      margin-bottom: 1rem;
     `
   }
 }
