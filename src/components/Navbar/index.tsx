@@ -16,9 +16,6 @@ const NavBar = ({onBack}) => {
 
   return (
     <nav css={styles.navbar}>
-      <a href="/" className="brand-name">
-        Tu informacion
-      </a>
       <div css={styles.menuBars}>
         <FontAwesomeIcon 
           icon={faBars} 

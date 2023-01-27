@@ -10,7 +10,8 @@ import useUser from "../../hooks/useUser";
 
 const ProfileComponent = () => {
   const styles = profileStyles()
-  const {name, genre} = useUser()
+  const user = useUser()
+
   return (
       <Table 
         border={false} 
@@ -18,7 +19,7 @@ const ProfileComponent = () => {
         <div css={styles.profileHeader}>
           <div css={styles.profileNameContainer}>
             <FontAwesomeIcon icon={faUser} size="2x"/>
-            <h3>Hola ! {name}</h3>
+            <h3>Hola ! {user.name ?? ''}</h3>
           </div>
           <div css={styles.buttonContainer}>
             <Button
@@ -34,8 +35,8 @@ const ProfileComponent = () => {
             <p>Mi Informacion</p>
           </div>
           <div>
-            <p>{name}</p>
-            <p>{genre}</p>
+            <p>{user.name ?? ''}</p>
+            <p>{user.genre ?? ''}</p>
           </div>
         </Table>
       </Table>
