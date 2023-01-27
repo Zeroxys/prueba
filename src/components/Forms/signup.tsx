@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Button from "../Button";
 import Input from "../Input";
 import { indexStyles } from "./styles";
@@ -7,33 +7,53 @@ const formWrapperSize = 60
 
 const SignUp = ({onBack}) => {
   const styles = indexStyles(formWrapperSize);
+  const [form, setForm] = useState({})
+
+  const onChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name] : e.target.value
+    })
+  }
+
+  const createUser = () => {
+    console.log(form)
+  }
+
   return (
     <div css={styles.formWrapper}>
       <div css={styles.loginForm}>
         <div css={styles.columnWrapper}>
           <div css={styles.column}>
             <Input
+              onChange={onChange}
               name={'name'} 
               label={"Nombre"} />
             <Input 
+              onChange={onChange}
               name={'secondSurname'}
               label={"Apellido Materno"} />
             <Input
+              onChange={onChange}
               name={'phone'} 
               label={"Telefono"} />
             <Input label={"Usuario"} />
           </div>
           <div css={styles.column}>
             <Input
+              onChange={onChange}
               name={'firstSurname'} 
               label={"Apellido Paterno"} />
             <Input
+              onChange={onChange}
               name={'birthday'} 
               label={"Fecha Nacimiento"} />
             <Input
+              onChange={onChange}
               name={'genre'} 
               label={"Genero"} />
             <Input
+              onChange={onChange}
               type="password"
               name={'password'} 
               label={"Contraseña"} />
@@ -41,13 +61,14 @@ const SignUp = ({onBack}) => {
         </div>
         <div>
           <Button 
+            onClick={createUser}
             height={45}
-            text={"Alta"} />
+            text={"Registrarse"} />
           <Button
             height={45}
             color={'#673299'}
             onClick={onBack} 
-            text={"Login"} />
+            text={"Volver"} />
         </div>
       </div>
     </div>
