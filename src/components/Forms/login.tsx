@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { ToastContainer, toast } from 'react-toastify';
 import { navigate } from "gatsby";
 import Button from "../Button";
 import Input from "../Input";
@@ -9,6 +10,8 @@ const Login = ({onBack}) => {
   const styles = indexStyles();
   const {userName, password} = useUser()
   const [form, setForm] = useState({})
+
+  const notify = () => toast("Registrate antes de iniciar sesión 😁");
 
   const onChange = (e) => {
     setForm({
@@ -22,11 +25,14 @@ const Login = ({onBack}) => {
       if(userName === form?.name && password === form?.password) {
         navigate('/home')
       }
-    }    
+    }else{
+      notify()
+    } 
   }
   
   return (
       <div css={styles.formWrapper}>
+        <ToastContainer autoClose={2000}/>
         <div css={styles.loginForm}>
           <Input
             onChange={onChange}

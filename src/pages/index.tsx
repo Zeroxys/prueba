@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Login from "../components/Forms/login";
 import SignUp from "../components/Forms/signup";
 import UserContext from "../context/userContext";
+import 'react-toastify/dist/ReactToastify.css';
 
 const pageStyles = {
   color: "#232129",

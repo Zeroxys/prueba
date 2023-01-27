@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 import Button from "../Button";
 import Input from "../Input";
 import { indexStyles } from "./styles";
@@ -9,6 +10,8 @@ const SignUp = ({onBack, userCreated}) => {
   const styles = indexStyles(formWrapperSize);
   const [form, setForm] = useState({})
 
+  const notify = () => toast("Usuario creado con exito 😁");
+
   const onChange = (e) => {
     setForm({
       ...form,
@@ -18,11 +21,15 @@ const SignUp = ({onBack, userCreated}) => {
 
   const createUser = () => {
     userCreated(form)
-    onBack()
+    notify()
+    setTimeout(() => {
+      onBack()
+    }, 2100);
   }
 
   return (
     <div css={styles.formWrapper}>
+      <ToastContainer autoClose={2000}/>
       <div css={styles.loginForm}>
         <div css={styles.columnWrapper}>
           <div css={styles.column}>
