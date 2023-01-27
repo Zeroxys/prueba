@@ -17,9 +17,11 @@ const Login = ({onBack}) => {
           <Input label={"Usuario"} />
           <Input label={"Contraseña"} />
           <Button 
+            height={45}
             onClick={() => onSubmit()}
             text={"Ingresar"}></Button>
           <Button
+            height={45}
             color={'#673299'}
             onClick={onBack} 
             text={"Registrarse"}></Button>

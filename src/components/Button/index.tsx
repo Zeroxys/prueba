@@ -7,12 +7,14 @@ const Button = ({
   color, 
   height, 
   marginBottom, 
-  padding
+  padding,
+  children
 }) => {
   const styles = buttonStyles(color, height, marginBottom, padding)
 
   return (<button onClick={onClick} css={styles.wrapper}>
-    <p>{text}</p>
+    {children ?? children}
+    {text ?? <p>{text}</p>}
   </button>)
 }
 

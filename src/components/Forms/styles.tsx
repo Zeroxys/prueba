@@ -19,12 +19,12 @@ export const indexStyles = (formWrapperSize) => {
     columnWrapper : css`
       display: flex;
       flex-direction: row;
-      justify-content:center;
+      justify-content:space-around;
       align-items:center;
       flex-wrap: wrap;
     `,
     column : css`
-      max-width : 28rem;
+      max-width : 27rem;
       width: 100%;
     `
   }

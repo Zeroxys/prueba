@@ -62,19 +62,19 @@ export const inputStyles = () => {
         
       }
 
-      &:not(:placeholder-shown) + input {
-        border:1px solid red;
+      &:not(:placeholder-shown) {
         &:not(:focus) {
           & + label {
             top: -0.75rem;
             left: 1rem;
             z-index: 9;
             font-size: 0.875rem;
-            font-weight: 100;
+            font-weight: 500;
             transition: all 0.2s ease-in-out;
           }
         }
       }
+
     `
   }
 }

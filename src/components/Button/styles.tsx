@@ -3,13 +3,16 @@ import { faL } from '@fortawesome/free-solid-svg-icons'
 
 export const buttonStyles = (
   color, 
-  height = false, 
-  marginBottom = false, 
-  padding = false
+  height, 
+  marginBottom = false,
   ) => {
   return {
     wrapper : css`
+    display:flex;
+    justify-content:center;
+    align-items:center;
     width:100%;
+    height: ${height}px;
     background: ${color ?? '#8c54ff'};
     border: 0;
     border-radius: 5px;

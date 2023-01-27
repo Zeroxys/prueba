@@ -12,24 +12,42 @@ const SignUp = ({onBack}) => {
       <div css={styles.loginForm}>
         <div css={styles.columnWrapper}>
           <div css={styles.column}>
-            <Input label={"Nombre"} />
-            <Input label={"Apellido Materno"} />
-            <Input label={"Telefono"} />
+            <Input
+              name={'name'} 
+              label={"Nombre"} />
+            <Input 
+              name={'secondSurname'}
+              label={"Apellido Materno"} />
+            <Input
+              name={'phone'} 
+              label={"Telefono"} />
             <Input label={"Usuario"} />
           </div>
           <div css={styles.column}>
-            <Input label={"Apellido Paterno"} />
-            <Input label={"Fecha Nacimiento"} />
-            <Input label={"Genero"} />
-            <Input label={"Contraseña"} />
+            <Input
+              name={'firstSurname'} 
+              label={"Apellido Paterno"} />
+            <Input
+              name={'birthday'} 
+              label={"Fecha Nacimiento"} />
+            <Input
+              name={'genre'} 
+              label={"Genero"} />
+            <Input
+              type="password"
+              name={'password'} 
+              label={"Contraseña"} />
           </div>
         </div>
         <div>
-          <Button text={"Alta"}></Button>
+          <Button 
+            height={45}
+            text={"Alta"} />
           <Button
+            height={45}
             color={'#673299'}
             onClick={onBack} 
-            text={"Login"}></Button>
+            text={"Login"} />
         </div>
       </div>
     </div>
