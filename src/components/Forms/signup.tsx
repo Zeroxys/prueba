@@ -5,7 +5,7 @@ import { indexStyles } from "./styles";
 
 const formWrapperSize = 60
 
-const SignUp = ({onBack}) => {
+const SignUp = ({onBack, userCreated}) => {
   const styles = indexStyles(formWrapperSize);
   const [form, setForm] = useState({})
 
@@ -17,7 +17,8 @@ const SignUp = ({onBack}) => {
   }
 
   const createUser = () => {
-    console.log(form)
+    userCreated(form)
+    onBack()
   }
 
   return (
@@ -37,7 +38,10 @@ const SignUp = ({onBack}) => {
               onChange={onChange}
               name={'phone'} 
               label={"Telefono"} />
-            <Input label={"Usuario"} />
+            <Input
+              onChange={onChange}
+              name={'userName'}
+              label={"Usuario"} />
           </div>
           <div css={styles.column}>
             <Input

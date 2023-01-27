@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Login from "../components/Forms/login";
 import SignUp from "../components/Forms/signup";
+import UserContext from "../context/userContext";
 
 const pageStyles = {
   color: "#232129",
@@ -10,17 +11,24 @@ const pageStyles = {
 
 const IndexPage = () => {
   const [showSignUp, setShowSignUp] = useState(false);
+  const [user, setUser] = useState({})
 
   const changeForms = () => setShowSignUp(!showSignUp);
+  const userCreated = (user) => setUser(user)
 
   return (
-    <main style={pageStyles}>
-      {!showSignUp ? (
-        <Login onBack={changeForms} />
-      ) : (
-        <SignUp onBack={changeForms} />
-      )}
-    </main>
+    <UserContext.Provider value={user}>
+      <main style={pageStyles}>
+        {!showSignUp ? (
+          <Login onBack={changeForms} />
+        ) : (
+          <SignUp
+            userCreated={(user) => userCreated(user)} 
+            onBack={changeForms} />
+        )}
+      </main>
+    </UserContext.Provider>
+
   );
 };
 

@@ -6,9 +6,11 @@ import {
 import Table from "../Table";
 import { profileStyles } from "./styles";
 import Button from "../Button";
+import useUser from "../../hooks/useUser";
 
 const ProfileComponent = () => {
   const styles = profileStyles()
+  const {name, genre} = useUser()
   return (
       <Table 
         border={false} 
@@ -16,7 +18,7 @@ const ProfileComponent = () => {
         <div css={styles.profileHeader}>
           <div css={styles.profileNameContainer}>
             <FontAwesomeIcon icon={faUser} size="2x"/>
-            <h3>user name</h3>
+            <h3>Hola ! {name}</h3>
           </div>
           <div css={styles.buttonContainer}>
             <Button
@@ -32,9 +34,8 @@ const ProfileComponent = () => {
             <p>Mi Informacion</p>
           </div>
           <div>
-            <p>nombre</p>
-            <p>sexo</p>
-            <p>edad</p>
+            <p>{name}</p>
+            <p>{genre}</p>
           </div>
         </Table>
       </Table>
